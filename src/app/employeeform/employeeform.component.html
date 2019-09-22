@@ -1,0 +1,54 @@
+
+<div class="container">
+	<div class="row"><br><br>
+		<div class="col-xs-12">
+			<div class="pull-left">
+				<img src="../../assets/images/javahome-logo.png" class="img-responsive website-logo">
+			</div>
+			<div class="pull-right">
+				<ul class="list-inline list-unstyled">
+					<li>+91 9886611117</li>
+					<li><a href="https://youtube.com/javahomecloud">Youtube Channel</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-12 employee-form-main">
+			<form class="form-horizontal" [formGroup]="employeeForm" (ngSubmit)="employeeFormSubmit()">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Employee Form</h2>
+					</div>
+					<div class="panel-body">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-4">
+									<input type="text" class="form-control" name="" formControlName="id" placeholder="Employee Id">
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<input type="text" class="form-control" name="" formControlName="name" placeholder="Employee Name">
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<input type="submit" name="" value="Add Employee" class="btn btn-primary">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-xs-12">
+			<table class="table">
+				<tr>
+					<th>Emp Id</th>
+					<th>Emp Name</th>
+					<th>Actions</th>
+				</tr>
+				<tr *ngFor='let employeeData of employeeFormData'>
+					<th>{{employeeData.id}}</th>
+					<th>{{employeeData.name}}</th>
+					<th><input type="button" class="btn btn-danger" name="" value="Delete" (click)="deleteEmployee(employeeData)"></th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
